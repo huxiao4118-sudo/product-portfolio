@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Olist · Delivery Intelligence</title><link rel="stylesheet" href="style.css"><script src="plotly.min.js"></script></head>
+<body>
+<aside class="sidebar">
+ <a class="brand" href="operations.html"><span class="brand-mark">o</span><span>olist<span class="brand-sub">DELIVERY INTELLIGENCE</span></span></a>
+ <div class="nav-caption" id="nav-caption">WORKSPACE</div><nav id="nav"></nav>
+ <div class="side-panel"><a href="../START_HERE.html" style="display:block;margin-bottom:14px;color:#4a49d7">← Project case study</a><span class="tiny-dot"></span>Approval-time risk<span class="side-muted">CatBoost · version 2</span></div>
+ <div class="side-bottom"><a id="switch-app" href="dashboard.html">Open analytics dashboard ↗</a><div class="avatar">FT</div><span>Fulfillment team<small>Operations workspace</small></span></div>
+</aside>
+<main>
+ <header><div><div class="eyebrow" id="eyebrow">FULFILLMENT OPERATIONS</div><h1 id="title">Operations overview</h1><p id="subtitle">A clear view of delivery exceptions and upcoming commitments.</p></div>
+ <div class="header-right"><span class="connection" id="connection"><i></i>Offline demo</span><button class="button ghost" id="refresh">↻ Refresh</button></div></header>
+ <div class="toolbar"><div class="filter-group"><label>As of<input type="date" id="asof" value="2018-06-15" min="2018-05-01" max="2018-10-18"></label><label>Customer state<select id="state"><option value="">All states</option></select></label></div><span class="scope" id="scope">Scored approvals from May 2018 · 12:00 snapshot</span></div>
+ <section id="content"><div class="loading">Loading order data…</div></section>
+ <footer><span id="refreshed">Loading saved MySQL snapshot…</span><span>Olist Delivery Intelligence</span></footer>
+</main>
+<div class="overlay" id="overlay"></div><aside class="drawer" id="drawer"></aside><div id="toast" class="toast"></div>
+<script src="offline-data.js"></script><script src="offline-engine.js"></script><script src="app.js"></script></body></html>

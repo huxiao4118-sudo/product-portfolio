@@ -1,0 +1,143 @@
+{
+  "database": "olist_delivery_mysql",
+  "table_count": 21,
+  "row_counts": {
+    "calendar_dates": 1461,
+    "case_events": 4,
+    "categories": 73,
+    "category_translation": 71,
+    "closed_deals": 842,
+    "customers": 99441,
+    "geolocation_raw": 1000163,
+    "holiday_events": 44,
+    "ibge_state_statistics": 81,
+    "ibge_states": 27,
+    "mql_leads": 8000,
+    "order_calendar_anchor": 99441,
+    "order_items": 112650,
+    "orders": 99441,
+    "payments": 103886,
+    "predictions": 25540,
+    "products": 32951,
+    "reviews": 99224,
+    "seller_registry": 3557,
+    "sellers": 3095,
+    "zip_locations": 19015
+  },
+  "foreign_keys": [
+    {
+      "TABLE_NAME": "case_events",
+      "COLUMN_NAME": "order_id",
+      "REFERENCED_TABLE_NAME": "orders",
+      "REFERENCED_COLUMN_NAME": "order_id"
+    },
+    {
+      "TABLE_NAME": "closed_deals",
+      "COLUMN_NAME": "mql_id",
+      "REFERENCED_TABLE_NAME": "mql_leads",
+      "REFERENCED_COLUMN_NAME": "mql_id"
+    },
+    {
+      "TABLE_NAME": "closed_deals",
+      "COLUMN_NAME": "seller_id",
+      "REFERENCED_TABLE_NAME": "seller_registry",
+      "REFERENCED_COLUMN_NAME": "seller_id"
+    },
+    {
+      "TABLE_NAME": "customers",
+      "COLUMN_NAME": "customer_state",
+      "REFERENCED_TABLE_NAME": "ibge_states",
+      "REFERENCED_COLUMN_NAME": "state_code"
+    },
+    {
+      "TABLE_NAME": "holiday_events",
+      "COLUMN_NAME": "calendar_date",
+      "REFERENCED_TABLE_NAME": "calendar_dates",
+      "REFERENCED_COLUMN_NAME": "calendar_date"
+    },
+    {
+      "TABLE_NAME": "ibge_state_statistics",
+      "COLUMN_NAME": "state_code",
+      "REFERENCED_TABLE_NAME": "ibge_states",
+      "REFERENCED_COLUMN_NAME": "state_code"
+    },
+    {
+      "TABLE_NAME": "order_calendar_anchor",
+      "COLUMN_NAME": "approved_date",
+      "REFERENCED_TABLE_NAME": "calendar_dates",
+      "REFERENCED_COLUMN_NAME": "calendar_date"
+    },
+    {
+      "TABLE_NAME": "order_calendar_anchor",
+      "COLUMN_NAME": "order_id",
+      "REFERENCED_TABLE_NAME": "orders",
+      "REFERENCED_COLUMN_NAME": "order_id"
+    },
+    {
+      "TABLE_NAME": "order_calendar_anchor",
+      "COLUMN_NAME": "promised_date",
+      "REFERENCED_TABLE_NAME": "calendar_dates",
+      "REFERENCED_COLUMN_NAME": "calendar_date"
+    },
+    {
+      "TABLE_NAME": "order_items",
+      "COLUMN_NAME": "order_id",
+      "REFERENCED_TABLE_NAME": "orders",
+      "REFERENCED_COLUMN_NAME": "order_id"
+    },
+    {
+      "TABLE_NAME": "order_items",
+      "COLUMN_NAME": "product_id",
+      "REFERENCED_TABLE_NAME": "products",
+      "REFERENCED_COLUMN_NAME": "product_id"
+    },
+    {
+      "TABLE_NAME": "order_items",
+      "COLUMN_NAME": "seller_id",
+      "REFERENCED_TABLE_NAME": "sellers",
+      "REFERENCED_COLUMN_NAME": "seller_id"
+    },
+    {
+      "TABLE_NAME": "orders",
+      "COLUMN_NAME": "customer_id",
+      "REFERENCED_TABLE_NAME": "customers",
+      "REFERENCED_COLUMN_NAME": "customer_id"
+    },
+    {
+      "TABLE_NAME": "payments",
+      "COLUMN_NAME": "order_id",
+      "REFERENCED_TABLE_NAME": "orders",
+      "REFERENCED_COLUMN_NAME": "order_id"
+    },
+    {
+      "TABLE_NAME": "predictions",
+      "COLUMN_NAME": "order_id",
+      "REFERENCED_TABLE_NAME": "orders",
+      "REFERENCED_COLUMN_NAME": "order_id"
+    },
+    {
+      "TABLE_NAME": "products",
+      "COLUMN_NAME": "product_category_name",
+      "REFERENCED_TABLE_NAME": "categories",
+      "REFERENCED_COLUMN_NAME": "product_category_name"
+    },
+    {
+      "TABLE_NAME": "reviews",
+      "COLUMN_NAME": "order_id",
+      "REFERENCED_TABLE_NAME": "orders",
+      "REFERENCED_COLUMN_NAME": "order_id"
+    },
+    {
+      "TABLE_NAME": "sellers",
+      "COLUMN_NAME": "seller_state",
+      "REFERENCED_TABLE_NAME": "ibge_states",
+      "REFERENCED_COLUMN_NAME": "state_code"
+    },
+    {
+      "TABLE_NAME": "sellers",
+      "COLUMN_NAME": "seller_id",
+      "REFERENCED_TABLE_NAME": "seller_registry",
+      "REFERENCED_COLUMN_NAME": "seller_id"
+    }
+  ]
+}
